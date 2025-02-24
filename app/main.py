@@ -1,4 +1,6 @@
-from __future__ import annotations
+class Cargo:
+    def __init__(self, weight: int) -> None:
+        self.weight = weight
 
 
 class BaseRobot:
@@ -35,7 +37,6 @@ class FlyingRobot(BaseRobot):
                  coords: list | None = None) -> None:
         coords = coords or [0, 0, 0]
         super().__init__(name, weight, [coords[0], coords[1]])
-        # print(self.coords)
         self.coords.append(coords[2])
 
     def go_up(self, step: int = 1) -> None:
@@ -70,8 +71,3 @@ class DeliveryDrone(FlyingRobot):
 
     def unhook_load(self) -> None:
         self.current_load = None
-
-
-class Cargo:
-    def __init__(self, weight: int) -> None:
-        self.weight = weight
