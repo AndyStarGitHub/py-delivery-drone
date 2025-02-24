@@ -1,6 +1,4 @@
-class Cargo:
-    def __init__(self, weight: int) -> None:
-        self.weight = weight
+from __future__ import annotations
 
 
 class BaseRobot:
@@ -72,3 +70,8 @@ class DeliveryDrone(FlyingRobot):
 
     def unhook_load(self) -> None:
         self.current_load = None
+
+
+class Cargo:
+    def __init__(self, weight: int) -> None:
+        self.weight = weight
